@@ -1,0 +1,21 @@
+#Orchestration Service Config
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: orchestration-ingress
+  labels:
+    app: orchestration-svc
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - path: /orchestrationservices
+        pathType: Prefix
+        backend:
+          service:
+            name: orchestration-service
+            port:
+              number: 80

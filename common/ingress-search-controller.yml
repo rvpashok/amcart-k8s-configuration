@@ -1,0 +1,21 @@
+#Search Service Config
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: search-ingress
+  labels:
+    app: search-svc
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - path: /searchservices
+        pathType: Prefix
+        backend:
+          service:
+            name: search-service
+            port:
+              number: 80
