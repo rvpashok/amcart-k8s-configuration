@@ -33,3 +33,4 @@ phases:
       - kubectl apply -f user-svc-secret.yaml
       - kubectl apply -f user-svc-deployment.yaml
       - kubectl apply -f user-svc-hpa.yaml
+      - kubectl rollout restart deployment user-svc-deployment
