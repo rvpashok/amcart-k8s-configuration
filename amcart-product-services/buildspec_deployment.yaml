@@ -24,7 +24,7 @@ phases:
     commands:
       - echo Entered the build phase...
       - echo Change directory to secondary source
-      - cd $CODEBUILD_SRC_DIR
+      - cd $CODEBUILD_SRC_DIR/amcart-product-services
       - echo List directory
       - ls -la
       - export KUBECONFIG=$KUBECONFIG:~/.kube/config
