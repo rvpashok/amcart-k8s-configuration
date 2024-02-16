@@ -30,8 +30,8 @@ phases:
       - export KUBECONFIG=$KUBECONFIG:~/.kube/config
       - echo Push the latest image to cluster
       #- kubectl apply -f aws-auth.yaml
-      - kubectl apply -f deployment_files/product-service.yaml
-      - kubectl apply -f deployment_files/product-svc-secret.yaml
-      - kubectl apply -f deployment_files/product-svc-deployment.yaml
-      - kubectl apply -f deployment_files/product-svc-hpa.yaml
+      - kubectl apply -f product-service.yaml
+      - kubectl apply -f product-svc-secret.yaml
+      - kubectl apply -f product-svc-deployment.yaml
+      - kubectl apply -f product-svc-hpa.yaml
       
